@@ -23,31 +23,42 @@ public class Persona {
 	@Column(nullable=false)
 	private String apellido2;
 	private Date nacimiento;
-	@Size(min=8,max=9) 
+	@Size(max=9) 
 	private String sexo;
-	@Size(min=1,max=40)
+	@Size(max=40)
 	private String estado_civil;
-	@Size(min=5,max=60)
+	@Size(max=60)
 	private String nacionalidad;
-	private int edad;
-	@Size(min=50,max=600)
+	private Integer edad;
+	@Size(max=600)
 	private String direccion;
+	@Size(max=14)
 	private String celular;
+	@Size(max=14)
 	private String telHabitacion;
+	@Size(max=14)
 	private String telContacto;
+	@Size(max=30)
 	private String nombre_contacto;
+	@Size(max=60)
 	private String educacion;
+	@Size(max=150)
 	private String correo;
+	@Size(max=100)
 	private String padecimiento;
+	@Size(max=600)
 	private String observacion;
+	@Size(max=150)
 	private String estadoContrato;
-	private boolean vigencia;
+	private Boolean vigencia;
 	private Date fechaContratacion;
 	private String tipo_contrato;
 	private Long puesto_id;
 	private Long departamento_id;
 	private Long sede_id;
+	@Size(max=30)
 	private String forma_pago;
+	@Size(max=30)
 	private String tipo_jornada;
 	private Double jornada_diaria;
 	private Double jornada_semanal;
@@ -58,16 +69,22 @@ public class Persona {
 	private Double salario_base;
 	private Double salario_neto;
 	private Double salabrio_bruto;
+	@Size(max=30)
 	private String tipo_seguro;
 	private Double monto_aporte;
 	private Double pago_bonificacion;
 	private Double pago_celular;
 	private Double pago_transporte;
+	@Size(max=30)
 	private String moneda;
+	@Size(max=50)
 	private String medio_pago;
+	@Size(max=60)
 	private String banco;
+	@Size(max=22)
 	private String iban;
 	private Date fecha_extincion;
+	@Size(max=600)
 	private String detalle_extincion;
 	private Long user_id;
 	private Date fecha;
