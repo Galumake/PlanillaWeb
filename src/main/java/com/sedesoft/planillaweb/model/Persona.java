@@ -2,18 +2,36 @@ package com.sedesoft.planillaweb.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.validation.constraints.Size;
+
 public class Persona {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column(unique=true)
+	@Size(min=9,max=9)
 	private String cedula;
+	@Column(nullable=false)
 	private String nombre;
+	@Column(nullable=false)
 	private String apellido;
+	@Column(nullable=false)
 	private String apellido2;
-	private String nacimiento;
+	private Date nacimiento;
+	@Size(min=8,max=9) 
 	private String sexo;
+	@Size(min=1,max=40)
 	private String estado_civil;
+	@Size(min=5,max=60)
 	private String nacionalidad;
 	private int edad;
+	@Size(min=50,max=600)
 	private String direccion;
 	private String celular;
 	private String telHabitacion;
