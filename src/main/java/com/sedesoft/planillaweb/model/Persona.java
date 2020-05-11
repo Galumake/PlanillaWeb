@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.Size;
 
 public class Persona {
@@ -13,52 +15,58 @@ public class Persona {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(unique=true)
-	@Size(min=9,max=9)
+	@Column(unique = true)
+	@Size(min = 9, max = 9)
 	private String cedula;
-	@Column(nullable=false)
+	@Column(nullable = false)
 	private String nombre;
-	@Column(nullable=false)
+	@Column(nullable = false)
 	private String apellido;
-	@Column(nullable=false)
+	@Column(nullable = false)
 	private String apellido2;
 	private Date nacimiento;
-	@Size(max=9) 
+	@Size(max = 9)
 	private String sexo;
-	@Size(max=40)
+	@Size(max = 40)
 	private String estado_civil;
-	@Size(max=60)
+	@Size(max = 60)
 	private String nacionalidad;
 	private Integer edad;
-	@Size(max=600)
+	@Size(max = 600)
 	private String direccion;
-	@Size(max=14)
+	@Size(max = 14)
 	private String celular;
-	@Size(max=14)
+	@Size(max = 14)
 	private String telHabitacion;
-	@Size(max=14)
+	@Size(max = 14)
 	private String telContacto;
-	@Size(max=30)
+	@Size(max = 30)
 	private String nombre_contacto;
-	@Size(max=60)
+	@Size(max = 60)
 	private String educacion;
-	@Size(max=150)
+	@Size(max = 150)
 	private String correo;
-	@Size(max=100)
+	@Size(max = 100)
 	private String padecimiento;
-	@Size(max=600)
+	@Size(max = 600)
 	private String observacion;
-	@Size(max=150)
+	@Size(max = 150)
 	private String estadoContrato;
 	private Boolean vigencia;
 	private Date fechaContratacion;
 	private String tipo_contrato;
-	private Long puesto_id;
-	private Long departamento_id;
-	private Long sede_id;
-	@Size(max=30)
+	@OneToOne
+	@JoinColumn(name="puestoId")
+	private Puesto puesto;
+	@OneToOne
+	@JoinColumn(name="departamentoId")
+	private Departamento dpto;
+	@OneToOne
+	@JoinColumn(name="sedeId")
+	private Sede sede;
+	@Size(max = 30)
 	private String forma_pago;
-	@Size(max=30)
+	@Size(max = 30)
 	private String tipo_jornada;
 	private Double jornada_diaria;
 	private Double jornada_semanal;
@@ -69,24 +77,26 @@ public class Persona {
 	private Double salario_base;
 	private Double salario_neto;
 	private Double salabrio_bruto;
-	@Size(max=30)
+	@Size(max = 30)
 	private String tipo_seguro;
 	private Double monto_aporte;
 	private Double pago_bonificacion;
 	private Double pago_celular;
 	private Double pago_transporte;
-	@Size(max=30)
+	@Size(max = 30)
 	private String moneda;
-	@Size(max=50)
+	@Size(max = 50)
 	private String medio_pago;
-	@Size(max=60)
+	@Size(max = 60)
 	private String banco;
-	@Size(max=22)
+	@Size(max = 22)
 	private String iban;
 	private Date fecha_extincion;
-	@Size(max=600)
+	@Size(max = 600)
 	private String detalle_extincion;
-	private Long user_id;
+	@OneToOne
+	@JoinColumn(name="userId")
+	private User user;
 	private Date fecha;
 
 	public Persona() {
@@ -165,11 +175,11 @@ public class Persona {
 		this.nacionalidad = nacionalidad;
 	}
 
-	public int getEdad() {
+	public Integer getEdad() {
 		return edad;
 	}
 
-	public void setEdad(int edad) {
+	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
 
@@ -253,11 +263,11 @@ public class Persona {
 		this.estadoContrato = estadoContrato;
 	}
 
-	public boolean isVigencia() {
+	public Boolean getVigencia() {
 		return vigencia;
 	}
 
-	public void setVigencia(boolean vigencia) {
+	public void setVigencia(Boolean vigencia) {
 		this.vigencia = vigencia;
 	}
 
@@ -277,28 +287,28 @@ public class Persona {
 		this.tipo_contrato = tipo_contrato;
 	}
 
-	public Long getPuesto_id() {
-		return puesto_id;
+	public Puesto getPuesto() {
+		return puesto;
 	}
 
-	public void setPuesto_id(Long puesto_id) {
-		this.puesto_id = puesto_id;
+	public void setPuesto(Puesto puesto) {
+		this.puesto = puesto;
 	}
 
-	public Long getDepartamento_id() {
-		return departamento_id;
+	public Departamento getDpto() {
+		return dpto;
 	}
 
-	public void setDepartamento_id(Long departamento_id) {
-		this.departamento_id = departamento_id;
+	public void setDpto(Departamento dpto) {
+		this.dpto = dpto;
 	}
 
-	public Long getSede_id() {
-		return sede_id;
+	public Sede getSede() {
+		return sede;
 	}
 
-	public void setSede_id(Long sede_id) {
-		this.sede_id = sede_id;
+	public void setSede(Sede sede) {
+		this.sede = sede;
 	}
 
 	public String getForma_pago() {
@@ -477,12 +487,12 @@ public class Persona {
 		this.detalle_extincion = detalle_extincion;
 	}
 
-	public Long getUser_id() {
-		return user_id;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUser_id(Long user_id) {
-		this.user_id = user_id;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public Date getFecha() {
@@ -502,17 +512,18 @@ public class Persona {
 				+ ", nombre_contacto=" + nombre_contacto + ", educacion=" + educacion + ", correo=" + correo
 				+ ", padecimiento=" + padecimiento + ", observacion=" + observacion + ", estadoContrato="
 				+ estadoContrato + ", vigencia=" + vigencia + ", fechaContratacion=" + fechaContratacion
-				+ ", tipo_contrato=" + tipo_contrato + ", puesto_id=" + puesto_id + ", departamento_id="
-				+ departamento_id + ", sede_id=" + sede_id + ", forma_pago=" + forma_pago + ", tipo_jornada="
-				+ tipo_jornada + ", jornada_diaria=" + jornada_diaria + ", jornada_semanal=" + jornada_semanal
-				+ ", asumeHoraAlmuerzo=" + asumeHoraAlmuerzo + ", costo_hora=" + costo_hora + ", costo_extra="
-				+ costo_extra + ", costo_doble=" + costo_doble + ", salario_base=" + salario_base + ", salario_neto="
-				+ salario_neto + ", salabrio_bruto=" + salabrio_bruto + ", tipo_seguro=" + tipo_seguro
-				+ ", monto_aporte=" + monto_aporte + ", pago_bonificacion=" + pago_bonificacion + ", pago_celular="
-				+ pago_celular + ", pago_transporte=" + pago_transporte + ", moneda=" + moneda + ", medio_pago="
-				+ medio_pago + ", banco=" + banco + ", iban=" + iban + ", fecha_extincion=" + fecha_extincion
-				+ ", detalle_extincion=" + detalle_extincion + ", user_id=" + user_id + ", fecha=" + fecha + "]";
+				+ ", tipo_contrato=" + tipo_contrato + ", puesto=" + puesto + ", dpto=" + dpto + ", sede=" + sede
+				+ ", forma_pago=" + forma_pago + ", tipo_jornada=" + tipo_jornada + ", jornada_diaria=" + jornada_diaria
+				+ ", jornada_semanal=" + jornada_semanal + ", asumeHoraAlmuerzo=" + asumeHoraAlmuerzo + ", costo_hora="
+				+ costo_hora + ", costo_extra=" + costo_extra + ", costo_doble=" + costo_doble + ", salario_base="
+				+ salario_base + ", salario_neto=" + salario_neto + ", salabrio_bruto=" + salabrio_bruto
+				+ ", tipo_seguro=" + tipo_seguro + ", monto_aporte=" + monto_aporte + ", pago_bonificacion="
+				+ pago_bonificacion + ", pago_celular=" + pago_celular + ", pago_transporte=" + pago_transporte
+				+ ", moneda=" + moneda + ", medio_pago=" + medio_pago + ", banco=" + banco + ", iban=" + iban
+				+ ", fecha_extincion=" + fecha_extincion + ", detalle_extincion=" + detalle_extincion + ", user=" + user
+				+ ", fecha=" + fecha + "]";
 	}
+
 	
 	
 }
