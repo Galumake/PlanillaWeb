@@ -118,7 +118,7 @@
                              </a>
                              
                              <ul class="dropdown-menu" aria-labelledby="personaDropdown">
-                                    <li><a class="dropdown-item" href="#">Registrar Empledo</a></li>
+                                    <li><a class="dropdown-item" href="#">Registrar Colaborador</a></li>
                                     <li class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="${contextPath}/catalog/nac">Nacionalidad</a></li>                                
                              </ul>
