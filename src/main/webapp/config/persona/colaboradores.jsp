@@ -36,7 +36,7 @@
 
 	<!-- FORMULARIO -->
 	<div class="container-fluid m-4">
-		<form:form action="${contextPath}/catalog/save/"
+		<form:form action="#"
 			modelAttribute="nacionalidad" method="get">
 			<div class="row">
 				<div class="col-3"></div>
