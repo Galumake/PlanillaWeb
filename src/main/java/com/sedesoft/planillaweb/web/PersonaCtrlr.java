@@ -15,7 +15,7 @@ public class PersonaCtrlr {
 	
 	@GetMapping("/config/person/employee/show")
 	public String personaShow(Model model) {
-		return  "/config/persona/colaboradores";
+		return  "/config/persona/empleados";
 	}
 
 }
