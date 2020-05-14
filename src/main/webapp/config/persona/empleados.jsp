@@ -38,7 +38,8 @@
 	<!-- FORMULARIO -->
 	<div class="container-fluid m-4">
 
-		<form action="#" method="get">
+		<form:form action="${contextPath}/config/person/employee/save"
+			modelAttribute="entidad" method="get">
 
 			<div class="row">
 				<div class="col-1"></div>
@@ -51,38 +52,58 @@
 							<div class="form-row align-items-center">
 
 								<div class="col-2">
-									<label for="nombre">Cedula</label> <input type="text"
-										class="form-control" id="nombre"></input>
+									<label for="cedula">Cedula</label>
+									<form:input type="text" class="form-control" id="cedula"
+										path="cedula"></form:input>
 								</div>
 
 								<div class="col-3 ">
-									<label for="nombre">Nombre</label> <input type="text"
-										class="form-control" id="nombre"></input>
+									<label for="nombre">Nombre</label>
+									<form:input type="text" class="form-control" id="nombre"
+										path="nombre"></form:input>
 								</div>
 
 								<div class="col-3 ">
-									<label for="nombre">Apellido</label> <input type="text"
-										class="form-control" id="nombre"></input>
+									<label for="apellido">Apellido</label>
+									<form:input type="text" class="form-control" id="apellido"
+										path="apellido"></form:input>
 								</div>
 								<div class="col-3 ">
-									<label for="nombre">Segundo Apellido</label> <input type="text"
-										class="form-control" id="nombre"></input>
+									<label for="apellido2">Segundo Apellido</label>
+									<form:input type="text" class="form-control" id="apellido2"
+										path="apellido2"></form:input>
 								</div>
 
 							</div>
 							<br>
 							<div class="form-row align-items-center">
 								<div class="col-2">
-									<label for="nombre">Fecha Nacimiento</label> <input type="Date"
-										class="form-control" id="nombre"></input>
+									<label for="nacimiento">Fecha Nacimiento</label>
+									<form:input type="Date" class="form-control" id="nacimiento"
+										path="nacimiento"></form:input>
 								</div>
 
 								<div class="col-2">
-									<label for="cars" >Genero:</label> <select id="cars" class="form-control">
+									<label for="genero">Genero:</label>
+									<form:select id="genero" class="form-control" path="sexo">
 										<option value="maculino">masculino</option>
 										<option value="femenino">femenino</option>
-									</select>
+									</form:select>
 								</div>
+
+								<div class="col-2">
+									<label for="estado_civil">Estado Civil:</label>
+									<form:select id="estado_civil" class="form-control"
+										path="estado_civil">
+										<option value="soltero(a)">soltero(a)</option>
+										<option value="casado(a)">casado(a)</option>
+										<option value="divorciado(a)">divorciado(a)</option>
+										<option value="union_libre">union libre</option>
+									</form:select>
+								</div>
+
+
+
 							</div>
 
 
@@ -94,7 +115,23 @@
 				<div class="col-1"></div>
 			</div>
 
-		</form>
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10">
+					<div class="card border-success  mb-3">
+						<h5 class="card-header ">Ubicaci&oacute;n</h5>
+						<div class="card-body text-dark">
+							<div class="form-row align-items-center">
+							
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
+
+		</form:form>
 	</div>
 	<br>
 

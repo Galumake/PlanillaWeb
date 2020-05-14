@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.sedesoft.planillaweb.model.Persona;
 import com.sedesoft.planillaweb.service.PersonaSrv;
 
 @Controller
@@ -15,6 +16,7 @@ public class PersonaCtrlr {
 	
 	@GetMapping("/config/person/employee/show")
 	public String personaShow(Model model) {
+		model.addAttribute("entidad", (new Persona()));		
 		return  "/config/persona/empleados";
 	}
 
