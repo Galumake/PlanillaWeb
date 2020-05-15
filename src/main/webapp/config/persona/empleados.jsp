@@ -102,6 +102,16 @@
 									</form:select>
 								</div>
 
+								<div class="col-2">
+									<label for="nacionalidad">Nacionalidad:</label>
+									<form:select id="nacionalidad" class="form-control"
+										path="nacionalidad">
+										<c:forEach items="${nacionalidades}" var="nac">
+											<option value="${nac.id}">${nac.nombre}</option>	
+										</c:forEach>				
+									</form:select>
+								</div>
+
 
 
 							</div>
@@ -121,9 +131,7 @@
 					<div class="card border-success  mb-3">
 						<h5 class="card-header ">Ubicaci&oacute;n</h5>
 						<div class="card-body text-dark">
-							<div class="form-row align-items-center">
-							
-							</div>
+							<div class="form-row align-items-center"></div>
 						</div>
 
 					</div>
