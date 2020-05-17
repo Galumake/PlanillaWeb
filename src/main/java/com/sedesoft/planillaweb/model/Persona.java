@@ -49,15 +49,18 @@ public class Persona {
 	private String educacion;
 	@Size(max = 150)
 	private String correo;
-	@Size(max = 100)
-	private String padecimiento;
+	@Size(max = 600)
+	private String padecimientos;
 	@Size(max = 600)
 	private String observacion;
 	@Size(max = 150)
-	private String estadoContrato;
+	private String estado_contrato;
 	private Boolean vigencia;
-	private Date fechaContratacion;
+	private Date fechaContrato;
 	private String tipo_contrato;
+	private Date fin_de_plazo;
+	@Size(max = 600)
+	private String observacion_contrato;
 	@OneToOne
 	@JoinColumn(name="puestoId")
 	private Puesto puesto;
@@ -242,12 +245,12 @@ public class Persona {
 		this.correo = correo;
 	}
 
-	public String getPadecimiento() {
-		return padecimiento;
+	public String getPadecimientos() {
+		return padecimientos;
 	}
 
-	public void setPadecimiento(String padecimiento) {
-		this.padecimiento = padecimiento;
+	public void setPadecimientos(String padecimientos) {
+		this.padecimientos = padecimientos;
 	}
 
 	public String getObservacion() {
@@ -258,12 +261,12 @@ public class Persona {
 		this.observacion = observacion;
 	}
 
-	public String getEstadoContrato() {
-		return estadoContrato;
+	public String getEstado_contrato() {
+		return estado_contrato;
 	}
 
-	public void setEstadoContrato(String estadoContrato) {
-		this.estadoContrato = estadoContrato;
+	public void setEstado_contrato(String estado_contrato) {
+		this.estado_contrato = estado_contrato;
 	}
 
 	public Boolean getVigencia() {
@@ -274,12 +277,12 @@ public class Persona {
 		this.vigencia = vigencia;
 	}
 
-	public Date getFechaContratacion() {
-		return fechaContratacion;
+	public Date getFechaContrato() {
+		return fechaContrato;
 	}
 
-	public void setFechaContratacion(Date fechaContratacion) {
-		this.fechaContratacion = fechaContratacion;
+	public void setFechaContrato(Date fechaContrato) {
+		this.fechaContrato = fechaContrato;
 	}
 
 	public String getTipo_contrato() {
@@ -506,6 +509,23 @@ public class Persona {
 		this.fecha = fecha;
 	}
 
+	
+	public Date getFin_de_plazo() {
+		return fin_de_plazo;
+	}
+
+	public void setFin_de_plazo(Date fin_de_plazo) {
+		this.fin_de_plazo = fin_de_plazo;
+	}
+
+	public String getObservacion_contrato() {
+		return observacion_contrato;
+	}
+
+	public void setObservacion_contrato(String observacion_contrato) {
+		this.observacion_contrato = observacion_contrato;
+	}
+
 	@Override
 	public String toString() {
 		return "Persona [id=" + id + ", cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido
@@ -513,10 +533,11 @@ public class Persona {
 				+ estado_civil + ", nacionalidad=" + nacionalidad + ", edad=" + edad + ", direccion=" + direccion
 				+ ", celular=" + celular + ", telHabitacion=" + telHabitacion + ", telContacto=" + telContacto
 				+ ", nombre_contacto=" + nombre_contacto + ", educacion=" + educacion + ", correo=" + correo
-				+ ", padecimiento=" + padecimiento + ", observacion=" + observacion + ", estadoContrato="
-				+ estadoContrato + ", vigencia=" + vigencia + ", fechaContratacion=" + fechaContratacion
-				+ ", tipo_contrato=" + tipo_contrato + ", puesto=" + puesto + ", dpto=" + dpto + ", sede=" + sede
-				+ ", forma_pago=" + forma_pago + ", tipo_jornada=" + tipo_jornada + ", jornada_diaria=" + jornada_diaria
+				+ ", padecimientos=" + padecimientos + ", observacion=" + observacion + ", estadoContrato="
+				+ estado_contrato + ", vigencia=" + vigencia + ", fechaContratacion=" + fechaContrato
+				+ ", tipo_contrato=" + tipo_contrato + ", fin_de_plazo=" + fin_de_plazo + ", observacion_contrato="
+				+ observacion_contrato + ", puesto=" + puesto + ", dpto=" + dpto + ", sede=" + sede + ", forma_pago="
+				+ forma_pago + ", tipo_jornada=" + tipo_jornada + ", jornada_diaria=" + jornada_diaria
 				+ ", jornada_semanal=" + jornada_semanal + ", asumeHoraAlmuerzo=" + asumeHoraAlmuerzo + ", costo_hora="
 				+ costo_hora + ", costo_extra=" + costo_extra + ", costo_doble=" + costo_doble + ", salario_base="
 				+ salario_base + ", salario_neto=" + salario_neto + ", salabrio_bruto=" + salabrio_bruto
@@ -526,6 +547,8 @@ public class Persona {
 				+ ", fecha_extincion=" + fecha_extincion + ", detalle_extincion=" + detalle_extincion + ", user=" + user
 				+ ", fecha=" + fecha + "]";
 	}
+
+
 
 	
 	

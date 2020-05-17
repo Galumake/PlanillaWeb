@@ -117,15 +117,15 @@
 								</div>
 
 								<div class="col-1">
-									<label for="points">Edad</label> <input type="number"
-										class="form-control" id="points" name="points" step="1"
-										min="15" max="70" paht="${nac.edad}">
+									<label for="points">Edad</label>
+									<form:input type="number" class="form-control" id="points"
+										name="points" step="1" min="15" max="70" path="edad"></form:input>
 								</div>
 
 								<div class="col-2">
 									<label for="estado_civil">Educacion:</label>
 									<form:select id="estado_civil" class="form-control"
-										path="${nac.estado_civil}">
+										path="estado_civil">
 										<option value="primaria incompleta">primaria
 											incompleta</option>
 										<option value="primaria completa">primaria completa</option>
@@ -162,31 +162,31 @@
 								<div class="col-3">
 									<label for="email">correo</label>
 									<form:input type="email" class="form-control" id="email"
-										path="${correo}"></form:input>
+										path="correo"></form:input>
 								</div>
 
 								<div class="col-2">
 									<label for="celular">celular</label>
 									<form:input type="text" class="form-control" id="celular"
-										path="${celular}"></form:input>
+										path="celular"></form:input>
 								</div>
 
 								<div class="col-2">
 									<label for="telefono">teléfono</label>
 									<form:input type="text" class="form-control" id="telefono"
-										path="${telHabitacion}" placeholder="teléfono habitación"></form:input>
+										path="telHabitacion" placeholder="teléfono habitación"></form:input>
 								</div>
 
 								<div class="col-3">
 									<label for="contacto">Nombre Contacto</label>
 									<form:input type="text" class="form-control" id="contacto"
-										path="${nombre_contacto}"></form:input>
+										path="nombre_contacto"></form:input>
 								</div>
 
 								<div class="col-2">
 									<label for="telefonoContacto">teléfono Contacto</label>
 									<form:input type="text" class="form-control"
-										id="telefonoContacto" path="${telContacto}"></form:input>
+										id="telefonoContacto" path="telContacto"></form:input>
 								</div>
 
 							</div>
@@ -197,8 +197,8 @@
 
 								<div class="col-12">
 									<label for="textarea">Direccion</label>
-									<textarea class="form-control" id="textarea" rows="2" cols="15"
-										path="direccion"></textarea>
+									<form:textarea class="form-control" id="textarea" rows="2"
+										cols="15" path="direccion"></form:textarea>
 								</div>
 							</div>
 
@@ -218,8 +218,9 @@
 							<div class="form-row align-items-center">
 								<div class="col-12">
 									<label for="padecimientos">Padecimientos</label>
-									<textarea class="form-control" id="padecimientos" rows="2"
-										cols="15" path="${padecimientos}"></textarea>
+									<form:textarea class="form-control" id="padecimientos" rows="2"
+										cols="15" path="padecimientos"
+										placeholder="Algún padesismiento que se deba conocer del colaborador"></form:textarea>
 								</div>
 
 
@@ -228,9 +229,10 @@
 							<br>
 							<div class="form-row align-items-center">
 								<div class="col-12">
-									<label for="observacion">Observación</label>
-									<textarea class="form-control" id="obsdervacion" rows="2"
-										cols="15" path="${observacion}"></textarea>
+									<label for="observacion">Observaciones</label>
+									<form:textarea class="form-control" id="obsdervacion" rows="2"
+										cols="15" path="observacion"
+										placeholder="Algún dato adicional que se deba conocer del colaborador"></form:textarea>
 								</div>
 							</div>
 						</div>
@@ -245,6 +247,176 @@
 				<div class="col-10">
 					<div class="card border-success  mb-3">
 						<h5 class="card-header ">Contrato</h5>
+						<div class="card-body text-dark">
+							<div class="form-row align-items-center">
+
+								<div class="col-2">
+									<label for="fechaContrato">Fecha de contrato</label>
+									<form:input type="Date" class="form-control" id="fechaContrato"
+										path="fechaContrato"></form:input>
+								</div>
+
+								<div class="col-3">
+									<label for="tipoContrato">Tipo de Contrato</label>
+									<form:select id="tipoContrato" class="form-control"
+										path="tipo_contrato">
+										<option value="plazo idefinido">plazo idefinido</option>
+										<option value="plazo fijo">plazo fijo</option>
+										<option value="eventual">eventual</option>
+										<option value="pasantia sin paga">pasantia sin paga</option>
+										<option value="pasantia pagada">pasantia pagada</option>
+									</form:select>
+								</div>
+
+								<div class="col-2">
+									<label for="finPlazo">Fin de plazo</label>
+									<form:input type="Date" class="form-control" id="finPlazo"
+										path="fin_de_plazo"></form:input>
+								</div>
+
+								<div class="col-3">
+									<label for="estado_contrato">Estado de Contrato</label>
+									<form:select id="estado_contrato" class="form-control"
+										path="estado_contrato">
+										<option value="vigente">vigente</option>
+										<option value="despido justa causa">despido justa
+											causa</option>
+										<option value="despido sin justa causa">despido sin
+											justa causa</option>
+										<option value="acuerdo mutuo">acuerdo mutuo</option>
+										<option value="renuncia">renuncia</option>
+										<option value="muerte">muerte</option>
+									</form:select>
+								</div>
+
+
+							</div>
+							<br>
+							<div class="form-row align-items-center">
+								<div class="col-12">
+									<label for="obCotrato">Objesvaciones</label>
+									<form:textarea class="form-control" id="obContrato" rows="2"
+										cols="15" path="observacion_contrato"
+										placeholder="Algún dato adicional que aclare el estado del contrato"></form:textarea>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10">
+					<div class="card border-success  mb-3">
+						<h5 class="card-header ">Posición</h5>
+						<div class="card-body text-dark">
+							<div class="form-row align-items-center">
+
+								<div class="col-4">
+									<label for="nacionalidad">Sede</label>
+									<form:select id="nacionalidad" class="form-control"
+										path="nacionalidad">
+										<c:forEach items="${sedes}" var="s">
+											<option value="${s.sedeId}">${s.nombre}</option>
+										</c:forEach>
+									</form:select>
+								</div>
+
+
+								<div class="col-4">
+									<label for="nacionalidad">Puesto</label>
+									<form:select id="nacionalidad" class="form-control"
+										path="nacionalidad">
+										<c:forEach items="${puestos}" var="p">
+											<option value="${p.puestoId}">${p.nombre}</option>
+										</c:forEach>
+									</form:select>
+								</div>
+
+
+								<div class="col-4">
+									<label for="nacionalidad">Departamento</label>
+									<form:select id="nacionalidad" class="form-control"
+										path="nacionalidad">
+										<c:forEach items="${departamentos}" var="d">
+											<option value="${d.deptoId}">${d.nombre}</option>
+										</c:forEach>
+									</form:select>
+								</div>
+
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10">
+					<div class="card border-success  mb-3">
+						<h5 class="card-header ">Jornada</h5>
+						<div class="card-body text-dark">
+							<div class="form-row align-items-center"></div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10">
+					<div class="card border-success  mb-3">
+						<h5 class="card-header ">Aporte</h5>
+						<div class="card-body text-dark">
+							<div class="form-row align-items-center"></div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10">
+					<div class="card border-success  mb-3">
+						<h5 class="card-header ">Medio de pago</h5>
+						<div class="card-body text-dark">
+							<div class="form-row align-items-center"></div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10">
+					<div class="card border-success  mb-3">
+						<h5 class="card-header ">Complementos</h5>
+						<div class="card-body text-dark">
+							<div class="form-row align-items-center"></div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10">
+					<div class="card border-success  mb-3">
+						<h5 class="card-header ">Costos</h5>
 						<div class="card-body text-dark">
 							<div class="form-row align-items-center"></div>
 						</div>

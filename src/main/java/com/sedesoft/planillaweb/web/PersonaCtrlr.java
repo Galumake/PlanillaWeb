@@ -6,8 +6,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.sedesoft.planillaweb.model.Persona;
+import com.sedesoft.planillaweb.service.DepartamentoSrv;
 import com.sedesoft.planillaweb.service.NacionalidadSrv;
 import com.sedesoft.planillaweb.service.PersonaSrv;
+import com.sedesoft.planillaweb.service.PuestoSrv;
+import com.sedesoft.planillaweb.service.SedeSrv;
 
 @Controller
 public class PersonaCtrlr {
@@ -18,10 +21,22 @@ public class PersonaCtrlr {
 	@Autowired
 	NacionalidadSrv nacSrv;
 	
+	@Autowired
+	SedeSrv sedeSrv;
+	
+	@Autowired
+	PuestoSrv puestoSrv;
+	
+	@Autowired
+	DepartamentoSrv departamentoSrv;
+
 	@GetMapping("/config/person/employee/show")
 	public String personaShow(Model model) {
 		model.addAttribute("entidad", (new Persona()));	
-		model.addAttribute("nacionalidades", nacSrv.findAll() );	
+		model.addAttribute("nacionalidades", nacSrv.findAll() );
+		model.addAttribute("sedes", sedeSrv.findAll() );
+		model.addAttribute("puestos", puestoSrv.findAll() );
+		model.addAttribute("departamentos", departamentoSrv.findAll() );
 		return  "/config/persona/empleados";
 	}
 
