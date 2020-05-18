@@ -97,9 +97,6 @@ public class Persona {
 	private String banco;
 	@Size(max = 22)
 	private String iban;
-	private Date fecha_extincion;
-	@Size(max = 600)
-	private String detalle_extincion;
 	@OneToOne
 	@JoinColumn(name="userId")
 	private User user;
@@ -477,21 +474,6 @@ public class Persona {
 		this.iban = iban;
 	}
 
-	public Date getFecha_extincion() {
-		return fecha_extincion;
-	}
-
-	public void setFecha_extincion(Date fecha_extincion) {
-		this.fecha_extincion = fecha_extincion;
-	}
-
-	public String getDetalle_extincion() {
-		return detalle_extincion;
-	}
-
-	public void setDetalle_extincion(String detalle_extincion) {
-		this.detalle_extincion = detalle_extincion;
-	}
 
 	public User getUser() {
 		return user;
@@ -533,20 +515,21 @@ public class Persona {
 				+ estado_civil + ", nacionalidad=" + nacionalidad + ", edad=" + edad + ", direccion=" + direccion
 				+ ", celular=" + celular + ", telHabitacion=" + telHabitacion + ", telContacto=" + telContacto
 				+ ", nombre_contacto=" + nombre_contacto + ", educacion=" + educacion + ", correo=" + correo
-				+ ", padecimientos=" + padecimientos + ", observacion=" + observacion + ", estadoContrato="
-				+ estado_contrato + ", vigencia=" + vigencia + ", fechaContratacion=" + fechaContrato
-				+ ", tipo_contrato=" + tipo_contrato + ", fin_de_plazo=" + fin_de_plazo + ", observacion_contrato="
-				+ observacion_contrato + ", puesto=" + puesto + ", dpto=" + dpto + ", sede=" + sede + ", forma_pago="
-				+ forma_pago + ", tipo_jornada=" + tipo_jornada + ", jornada_diaria=" + jornada_diaria
-				+ ", jornada_semanal=" + jornada_semanal + ", asumeHoraAlmuerzo=" + asumeHoraAlmuerzo + ", costo_hora="
-				+ costo_hora + ", costo_extra=" + costo_extra + ", costo_doble=" + costo_doble + ", salario_base="
-				+ salario_base + ", salario_neto=" + salario_neto + ", salabrio_bruto=" + salabrio_bruto
-				+ ", tipo_seguro=" + tipo_seguro + ", monto_aporte=" + monto_aporte + ", pago_bonificacion="
-				+ pago_bonificacion + ", pago_celular=" + pago_celular + ", pago_transporte=" + pago_transporte
-				+ ", moneda=" + moneda + ", medio_pago=" + medio_pago + ", banco=" + banco + ", iban=" + iban
-				+ ", fecha_extincion=" + fecha_extincion + ", detalle_extincion=" + detalle_extincion + ", user=" + user
-				+ ", fecha=" + fecha + "]";
+				+ ", padecimientos=" + padecimientos + ", observacion=" + observacion + ", estado_contrato="
+				+ estado_contrato + ", vigencia=" + vigencia + ", fechaContrato=" + fechaContrato + ", tipo_contrato="
+				+ tipo_contrato + ", fin_de_plazo=" + fin_de_plazo + ", observacion_contrato=" + observacion_contrato
+				+ ", puesto=" + puesto + ", dpto=" + dpto + ", sede=" + sede + ", forma_pago=" + forma_pago
+				+ ", tipo_jornada=" + tipo_jornada + ", jornada_diaria=" + jornada_diaria + ", jornada_semanal="
+				+ jornada_semanal + ", asumeHoraAlmuerzo=" + asumeHoraAlmuerzo + ", costo_hora=" + costo_hora
+				+ ", costo_extra=" + costo_extra + ", costo_doble=" + costo_doble + ", salario_base=" + salario_base
+				+ ", salario_neto=" + salario_neto + ", salabrio_bruto=" + salabrio_bruto + ", tipo_seguro="
+				+ tipo_seguro + ", monto_aporte=" + monto_aporte + ", pago_bonificacion=" + pago_bonificacion
+				+ ", pago_celular=" + pago_celular + ", pago_transporte=" + pago_transporte + ", moneda=" + moneda
+				+ ", medio_pago=" + medio_pago + ", banco=" + banco + ", iban=" + iban + ", user=" + user + ", fecha="
+				+ fecha + "]";
 	}
+
+
 
 
 

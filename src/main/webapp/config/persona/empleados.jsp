@@ -117,8 +117,8 @@
 								</div>
 
 								<div class="col-1">
-									<label for="points">Edad</label>
-									<form:input type="number" class="form-control" id="points"
+									<label for="edad">Edad</label>
+									<form:input type="number" class="form-control" id="edad"
 										name="points" step="1" min="15" max="70" path="edad"></form:input>
 								</div>
 
@@ -268,11 +268,7 @@
 									</form:select>
 								</div>
 
-								<div class="col-2">
-									<label for="finPlazo">Fin de plazo</label>
-									<form:input type="Date" class="form-control" id="finPlazo"
-										path="fin_de_plazo"></form:input>
-								</div>
+
 
 								<div class="col-3">
 									<label for="estado_contrato">Estado de Contrato</label>
@@ -287,6 +283,17 @@
 										<option value="renuncia">renuncia</option>
 										<option value="muerte">muerte</option>
 									</form:select>
+								</div>
+
+								<div class="col-2">
+									<label for="finPlazo">Fin de contrato</label>
+									<form:input type="Date" class="form-control" id="finPlazo"
+										path="fin_de_plazo"></form:input>
+								</div>
+
+								<div class="col-2">
+									<label>Contratar nuevamente</label> <input type="button"
+										class="button btn-primary form-control" value="recontratar">
 								</div>
 
 
@@ -363,7 +370,35 @@
 					<div class="card border-success  mb-3">
 						<h5 class="card-header ">Jornada</h5>
 						<div class="card-body text-dark">
-							<div class="form-row align-items-center"></div>
+							<div class="form-row align-items-center">
+
+								<div class="col-4">
+									<label for="tipoJornada">Tipo de Jornada</label>
+									<form:select id="tipoJornada" class="form-control"
+										path="tipo_jornada">
+										<option value="diurna">diurna</option>
+										<option value="nocturna">nocturna</option>
+										<option value="mixta">mixta</option>
+									</form:select>
+								</div>
+
+								<div class="col-4">
+									<label for="jornadaDiaria">Dias laborales</label>
+									<form:input type="number" class="form-control"
+										id="jornadaDiaria" name="points" step="1" min="0" max="7"
+										path="edad" text="dias" value="5"></form:input>
+								</div>
+
+								<div class="col-4">
+									<label for="jornadaHoraria">Horas laborales</label>
+									<form:input type="number" class="form-control"
+										id="jornadaDiaria" name="points" step="1" min="0" max="12"
+										path="edad" text="horas" value="9"></form:input>
+								</div>
+
+
+
+							</div>
 						</div>
 
 					</div>
@@ -375,23 +410,66 @@
 				<div class="col-1"></div>
 				<div class="col-10">
 					<div class="card border-success  mb-3">
-						<h5 class="card-header ">Aporte</h5>
+						<h5 class="card-header ">Pago</h5>
 						<div class="card-body text-dark">
-							<div class="form-row align-items-center"></div>
-						</div>
+							<div class="form-row align-items-center">
 
-					</div>
-				</div>
-				<div class="col-1"></div>
-			</div>
+								<div class="col-2">
+									<label for="tipoJornada">Forma de pago</label>
+									<form:select id="tipoJornada" class="form-control"
+										path="tipo_jornada">
+										<option value="semanal">semanal</option>
+										<option value="quincenal">quincenal</option>
+										<option value="mensual">mensual</option>
+										<option value="mensual">diario</option>
+										<option value="mensual">otra forma de pago</option>
+									</form:select>
+								</div>
 
-			<div class="row">
-				<div class="col-1"></div>
-				<div class="col-10">
-					<div class="card border-success  mb-3">
-						<h5 class="card-header ">Medio de pago</h5>
-						<div class="card-body text-dark">
-							<div class="form-row align-items-center"></div>
+								<div class="col-3">
+									<label for="tipoJornada">Medio de pago</label>
+									<form:select id="tipoJornada" class="form-control"
+										path="tipo_jornada">
+										<option value="transferencia bancaria">tranferencia
+											bancaria</option>
+										<option value="efectivo">efectivo</option>
+										<option value="mensual">deposito bancario</option>
+										<option value="mensual">cheque</option>
+										<option value="mensual">otro medio de pago</option>
+									</form:select>
+								</div>
+
+								<div class="col-2">
+									<label for="tipoJornada">Moneda</label>
+									<form:select id="tipoJornada" class="form-control"
+										path="tipo_jornada">
+										<option value="semanal">colon</option>
+										<option value="quincenal">dolar</option>
+										<option value="mensual">euro</option>
+										<option value="mensual">otra moneda</option>
+									</form:select>
+								</div>
+
+								<div class="col-2">
+									<label for="tipoJornada">Banco</label>
+									<form:select id="tipoJornada" class="form-control"
+										path="tipo_jornada">
+										<option value="semanal">bac credomatic</option>
+										<option value="quincenal">banco nacional</option>
+										<option value="mensual">banco bcr</option>
+										<option value="mensual">banco popular</option>
+										<option value="mensual">otro banco</option>
+									</form:select>
+								</div>
+
+								<div class="col-3">
+									<label for="iban">IBAN</label>
+									<form:input id="iban" type="text" class="form-control"
+										path="iban" />
+								</div>
+
+
+							</div>
 						</div>
 
 					</div>
@@ -405,20 +483,123 @@
 					<div class="card border-success  mb-3">
 						<h5 class="card-header ">Complementos</h5>
 						<div class="card-body text-dark">
-							<div class="form-row align-items-center"></div>
+							<div class="form-row align-items-center">
+
+								<div class="col-4">
+									<label for="bonificaciones">monto por bonificacion</label>
+									<form:input id="bonificaciones" type="text"
+										class="form-control" path="pago_bonificacion" value="0" />
+								</div>
+
+								<div class="col-4">
+									<label for="pagoCelular">monto por uso celular</label>
+									<form:input id="pagoCelular" type="text" class="form-control"
+										path="pago_bonificacion" value="0" />
+								</div>
+
+								<div class="col-4">
+									<label for="pagoTransporte">monto por transporte</label>
+									<form:input id="pagoTransorte" type="text" class="form-control"
+										path="pago_bonificacion" value="0" />
+								</div>
+
+
+							</div>
+
 						</div>
 
 					</div>
 				</div>
 				<div class="col-1"></div>
 			</div>
+
 			<div class="row">
 				<div class="col-1"></div>
 				<div class="col-10">
 					<div class="card border-success  mb-3">
 						<h5 class="card-header ">Costos</h5>
 						<div class="card-body text-dark">
-							<div class="form-row align-items-center"></div>
+							<div class="form-row align-items-center">
+
+								<div class="col-3">
+									<label for="costo">Costo hora</label>
+									<form:input type="number" class="form-control" id="costo"
+										name="points" step="1" min="0" max="200000" path="costo_hora"
+										text="horas"></form:input>
+								</div>
+
+								<div class="col-3">
+									<label for="costo">Costo doble</label>
+									<form:input type="number" class="form-control" id="costo"
+										name="points" step="1" min="0" max="200000" path="costo_hora"
+										text="horas"></form:input>
+								</div>
+
+								<div class="col-3">
+									<label for="costo">Costo extra</label>
+									<form:input type="number" class="form-control" id="costo"
+										name="points" step="1" min="0" max="200000" path="costo_hora"
+										text="horas"></form:input>
+								</div>
+
+								<div class="col-3">
+									<label for="costo">Total</label>
+									<form:input type="number" class="form-control" id="costo"
+										name="points" step="1" min="0" max="2000000" path="costo_hora"
+										text="horas"></form:input>
+								</div>
+
+
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10">
+					<div class="card border-success  mb-3">
+						<h5 class="card-header ">Salario</h5>
+						<div class="card-body text-dark">
+							<div class="form-row align-items-center">
+
+								<div class="col-3">
+									<label for="tipoJornada">Tipo de Aporte</label>
+									<form:select id="tipoJornada" class="form-control"
+										path="tipo_jornada">
+										<option value="porcentual">porcentual</option>
+										<option value="fijo">monto fijo</option>
+										<option value="exento">excento del aporte</option>
+									</form:select>
+								</div>
+
+								<div class="col-3">
+									<label for="jornadaHoraria">Monto</label>
+									<form:input type="number" class="form-control"
+										id="jornadaDiaria" name="points" step="1" min="0"
+										max="2000000" path="edad" text="horas" readonly="readonly"></form:input>
+								</div>
+
+								<div class="col-3">
+									<label for="costo">Salario Neto</label>
+									<form:input type="number" class="form-control" id="costo"
+										name="points" step="1" min="0" max="2000000" path="costo_hora"
+										text="horas"></form:input>
+								</div>
+
+								<div class="col-3">
+									<label for="costo">Salario Bruto</label>
+									<form:input type="number" class="form-control" id="costo"
+										name="points" step="1" min="0" max="2000000" path="costo_hora"
+										text="horas"></form:input>
+								</div>
+
+							</div>
 						</div>
 
 					</div>
