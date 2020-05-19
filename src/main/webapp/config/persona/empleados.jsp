@@ -522,35 +522,32 @@
 							<div class="form-row align-items-center">
 
 								<div class="col-3">
-									<label for="costo">Costo hora</label>
-									<form:input type="number" class="form-control" id="costo"
-										name="points" step="1" min="0" max="200000" path="costo_hora"
-										text="horas"></form:input>
+									<label for="costoHora">Costo hora</label>
+									<form:input type="number" class="form-control" id="costoHora"
+										name="costoHora" step="1" min="0" max="200000" path="costo_hora"
+										></form:input>
 								</div>
 
 								<div class="col-3">
-									<label for="costo">Costo doble</label>
-									<form:input type="number" class="form-control" id="costo"
-										name="points" step="1" min="0" max="200000" path="costo_hora"
-										text="horas"></form:input>
+									<label for="costoDoble">Costo doble</label>
+									<form:input type="number" class="form-control" id="costoDoble"
+										name="costoDoble" step="1" min="0" max="200000" path="costo_doble"
+									></form:input>
 								</div>
 
 								<div class="col-3">
-									<label for="costo">Costo extra</label>
-									<form:input type="number" class="form-control" id="costo"
-										name="points" step="1" min="0" max="200000" path="costo_hora"
-										text="horas"></form:input>
+									<label for="costoExtra">Costo extra</label>
+									<form:input type="number" class="form-control" id="costoExtra"
+										name="costoExtra" step="1" min="0" max="200000" path="costo_extra"
+										></form:input>
 								</div>
 
 								<div class="col-3">
-									<label for="costo">Total</label>
-									<form:input type="number" class="form-control" id="costo"
-										name="points" step="1" min="0" max="2000000" path="costo_hora"
-										text="horas"></form:input>
+									<label for="costoTotal">Total</label>
+									<form:input type="number" class="form-control" id="costoTotal"
+										name="points" step="1" min="0" max="3000000"
+										path="costo_total"></form:input>
 								</div>
-
-
-
 							</div>
 						</div>
 
@@ -569,9 +566,9 @@
 							<div class="form-row align-items-center">
 
 								<div class="col-3">
-									<label for="tipoJornada">Tipo de Aporte</label>
-									<form:select id="tipoJornada" class="form-control"
-										path="tipo_jornada">
+									<label for="tipoAporte">Tipo de Aporte</label>
+									<form:select id="tipoAporte" class="form-control"
+										path="tipo_aporte">
 										<option value="porcentual">porcentual</option>
 										<option value="fijo">monto fijo</option>
 										<option value="exento">excento del aporte</option>
@@ -579,25 +576,27 @@
 								</div>
 
 								<div class="col-3">
-									<label for="jornadaHoraria">Monto</label>
+									<label for="montoAporte">Monto de aporte</label>
+									<form:input type="number" class="form-control" id="montoAporte"
+										name="montoAporte" step="1" min="0" max="3000000"
+										path="monto_aporte"></form:input>
+								</div>
+
+								<div class="col-3">
+									<label for="salarioNeto">Salario Neto</label>
+									<form:input type="number" class="form-control" id="salarioNeto"
+										name="salarioNeto" step="1" min="0" max="3000000"
+										path="salario_neto"></form:input>
+								</div>
+
+								<div class="col-3">
+									<label for="salarioBruto">Salario Bruto</label>
 									<form:input type="number" class="form-control"
-										id="jornadaDiaria" name="points" step="1" min="0"
-										max="2000000" path="edad" text="horas" readonly="readonly"></form:input>
+										id="salarioBruto" name="salarioBruto" step="1" min="0"
+										max="3000000" path="salario_bruto"></form:input>
 								</div>
-
-								<div class="col-3">
-									<label for="costo">Salario Neto</label>
-									<form:input type="number" class="form-control" id="costo"
-										name="points" step="1" min="0" max="2000000" path="costo_hora"
-										text="horas"></form:input>
-								</div>
-
-								<div class="col-3">
-									<label for="costo">Salario Bruto</label>
-									<form:input type="number" class="form-control" id="costo"
-										name="points" step="1" min="0" max="2000000" path="costo_hora"
-										text="horas"></form:input>
-								</div>
+								<form:input type="hidden" path="fecha"></form:input>
+								<form:input type="hidden" path="user"></form:input>
 
 							</div>
 						</div>

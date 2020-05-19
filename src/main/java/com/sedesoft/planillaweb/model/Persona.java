@@ -80,11 +80,12 @@ public class Persona {
 	private Double costo_hora;
 	private Double costo_extra;
 	private Double costo_doble;
+	private Double costo_total;
 	private Double salario_base;
 	private Double salario_neto;
-	private Double salabrio_bruto;
+	private Double salario_bruto;
 	@Size(max = 30)
-	private String tipo_seguro;
+	private String tipo_aporte;
 	private Double monto_aporte;
 	private Double pago_bonificacion;
 	private Double pago_celular;
@@ -290,6 +291,22 @@ public class Persona {
 		this.tipo_contrato = tipo_contrato;
 	}
 
+	public Date getFin_de_plazo() {
+		return fin_de_plazo;
+	}
+
+	public void setFin_de_plazo(Date fin_de_plazo) {
+		this.fin_de_plazo = fin_de_plazo;
+	}
+
+	public String getObservacion_contrato() {
+		return observacion_contrato;
+	}
+
+	public void setObservacion_contrato(String observacion_contrato) {
+		this.observacion_contrato = observacion_contrato;
+	}
+
 	public Puesto getPuesto() {
 		return puesto;
 	}
@@ -378,6 +395,14 @@ public class Persona {
 		this.costo_doble = costo_doble;
 	}
 
+	public Double getCosto_total() {
+		return costo_total;
+	}
+
+	public void setCosto_total(Double costo_total) {
+		this.costo_total = costo_total;
+	}
+
 	public Double getSalario_base() {
 		return salario_base;
 	}
@@ -394,20 +419,20 @@ public class Persona {
 		this.salario_neto = salario_neto;
 	}
 
-	public Double getSalabrio_bruto() {
-		return salabrio_bruto;
+	public Double getSalario_bruto() {
+		return salario_bruto;
 	}
 
-	public void setSalabrio_bruto(Double salabrio_bruto) {
-		this.salabrio_bruto = salabrio_bruto;
+	public void setSalario_bruto(Double salario_bruto) {
+		this.salario_bruto = salario_bruto;
 	}
 
-	public String getTipo_seguro() {
-		return tipo_seguro;
+	public String getTipo_aporte() {
+		return tipo_aporte;
 	}
 
-	public void setTipo_seguro(String tipo_seguro) {
-		this.tipo_seguro = tipo_seguro;
+	public void setTipo_aporte(String tipo_aporte) {
+		this.tipo_aporte = tipo_aporte;
 	}
 
 	public Double getMonto_aporte() {
@@ -474,7 +499,6 @@ public class Persona {
 		this.iban = iban;
 	}
 
-
 	public User getUser() {
 		return user;
 	}
@@ -491,23 +515,6 @@ public class Persona {
 		this.fecha = fecha;
 	}
 
-	
-	public Date getFin_de_plazo() {
-		return fin_de_plazo;
-	}
-
-	public void setFin_de_plazo(Date fin_de_plazo) {
-		this.fin_de_plazo = fin_de_plazo;
-	}
-
-	public String getObservacion_contrato() {
-		return observacion_contrato;
-	}
-
-	public void setObservacion_contrato(String observacion_contrato) {
-		this.observacion_contrato = observacion_contrato;
-	}
-
 	@Override
 	public String toString() {
 		return "Persona [id=" + id + ", cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido
@@ -521,13 +528,15 @@ public class Persona {
 				+ ", puesto=" + puesto + ", dpto=" + dpto + ", sede=" + sede + ", forma_pago=" + forma_pago
 				+ ", tipo_jornada=" + tipo_jornada + ", jornada_diaria=" + jornada_diaria + ", jornada_semanal="
 				+ jornada_semanal + ", asumeHoraAlmuerzo=" + asumeHoraAlmuerzo + ", costo_hora=" + costo_hora
-				+ ", costo_extra=" + costo_extra + ", costo_doble=" + costo_doble + ", salario_base=" + salario_base
-				+ ", salario_neto=" + salario_neto + ", salabrio_bruto=" + salabrio_bruto + ", tipo_seguro="
-				+ tipo_seguro + ", monto_aporte=" + monto_aporte + ", pago_bonificacion=" + pago_bonificacion
-				+ ", pago_celular=" + pago_celular + ", pago_transporte=" + pago_transporte + ", moneda=" + moneda
-				+ ", medio_pago=" + medio_pago + ", banco=" + banco + ", iban=" + iban + ", user=" + user + ", fecha="
-				+ fecha + "]";
+				+ ", costo_extra=" + costo_extra + ", costo_doble=" + costo_doble + ", costo_total=" + costo_total
+				+ ", salario_base=" + salario_base + ", salario_neto=" + salario_neto + ", salario_bruto="
+				+ salario_bruto + ", tipo_aporte=" + tipo_aporte + ", monto_aporte=" + monto_aporte
+				+ ", pago_bonificacion=" + pago_bonificacion + ", pago_celular=" + pago_celular + ", pago_transporte="
+				+ pago_transporte + ", moneda=" + moneda + ", medio_pago=" + medio_pago + ", banco=" + banco + ", iban="
+				+ iban + ", user=" + user + ", fecha=" + fecha + "]";
 	}
+
+	
 
 
 
