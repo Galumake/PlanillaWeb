@@ -346,7 +346,7 @@
 								<div class="col-4">
 									<label for="departamento">Departamento</label>
 									<form:select id="departamento" class="form-control"
-										path="departamento">
+										path="dpto">
 										<c:forEach items="${departamentos}" var="d">
 											<option value="${d.deptoId}">${d.nombre}</option>
 										</c:forEach>
@@ -440,7 +440,7 @@
 								<div class="col-2">
 									<label for="moneda">Moneda</label>
 									<form:select id="moneda" class="form-control"
-										path="moenda">
+										path="moneda">
 										<option value="semanal">colon</option>
 										<option value="quincenal">dolar</option>
 										<option value="mensual">euro</option>
@@ -609,8 +609,8 @@
 	<br>
 
 
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="${contextPath}/resources/js/jquery-3.4.1.slim.min.js"></script>
+	<script src="${contextPath}/resources/js/popper.min.js"></script>
 	<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 
 </body>
