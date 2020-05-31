@@ -18,7 +18,9 @@
     <div class="container">
 
         <form:form method="POST" modelAttribute="userForm" class="form-signin">
+        
             <h2 class="form-signin-heading">Registre su cuenta</h2>
+            
             <spring:bind path="username">
                 <div class="form-group ${status.error ? 'has-error' : ''}">
                     <form:input type="text" path="username" class="form-control" placeholder="Nombre de usuarios"

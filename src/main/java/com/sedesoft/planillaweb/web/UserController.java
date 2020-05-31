@@ -34,7 +34,8 @@ public class UserController {
     
     @PostMapping("/registration")
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult) {
-        userValidator.validate(userForm, bindingResult);
+        
+    	userValidator.validate(userForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
             return "registration";
@@ -49,6 +50,7 @@ public class UserController {
     
     @GetMapping("/login")
     public String login(Model model, String error, String logout) {
+    	
         if (error != null)
             model.addAttribute("error", "Su usuario y clave no son validos.");
 

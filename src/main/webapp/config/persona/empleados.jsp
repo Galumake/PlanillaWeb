@@ -30,7 +30,6 @@
 				<a><img
 					src="${contextPath}/resources/img/button/home_white_18dp.png"
 					title="Ir a Menu" onclick="location.href='/'"></a>
-
 			</div>
 			<div class="col-1"></div>
 		</div>
@@ -123,9 +122,9 @@
 								</div>
 
 								<div class="col-2">
-									<label for="estado_civil">Educacion:</label>
-									<form:select id="estado_civil" class="form-control"
-										path="estado_civil">
+									<label for="educacion">Educacion:</label>
+									<form:select id="educacion" class="form-control"
+										path="educacion">
 										<option value="primaria incompleta">primaria
 											incompleta</option>
 										<option value="primaria completa">primaria completa</option>
@@ -172,14 +171,14 @@
 								</div>
 
 								<div class="col-2">
-									<label for="telefono">teléfono</label>
-									<form:input type="text" class="form-control" id="telefono"
+									<label for="telefonoHabitacion">teléfono</label>
+									<form:input type="text" class="form-control" id="telefonoHabitacion"
 										path="telHabitacion" placeholder="teléfono habitación"></form:input>
 								</div>
 
 								<div class="col-3">
-									<label for="contacto">Nombre Contacto</label>
-									<form:input type="text" class="form-control" id="contacto"
+									<label for="contactName">Nombre Contacto</label>
+									<form:input type="text" class="form-control" id="contactName"
 										path="nombre_contacto"></form:input>
 								</div>
 
@@ -196,8 +195,8 @@
 							<div class="form-row align-items-center">
 
 								<div class="col-12">
-									<label for="textarea">Direccion</label>
-									<form:textarea class="form-control" id="textarea" rows="2"
+									<label for="direccion">Direccion</label>
+									<form:textarea class="form-control" id="direccion" rows="2"
 										cols="15" path="direccion"></form:textarea>
 								</div>
 							</div>
@@ -269,7 +268,6 @@
 								</div>
 
 
-
 								<div class="col-3">
 									<label for="estado_contrato">Estado de Contrato</label>
 									<form:select id="estado_contrato" class="form-control"
@@ -324,9 +322,9 @@
 							<div class="form-row align-items-center">
 
 								<div class="col-4">
-									<label for="nacionalidad">Sede</label>
-									<form:select id="nacionalidad" class="form-control"
-										path="nacionalidad">
+									<label for="sede">Sede</label>
+									<form:select id="sede" class="form-control"
+										path="sede">
 										<c:forEach items="${sedes}" var="s">
 											<option value="${s.sedeId}">${s.nombre}</option>
 										</c:forEach>
@@ -335,9 +333,9 @@
 
 
 								<div class="col-4">
-									<label for="nacionalidad">Puesto</label>
-									<form:select id="nacionalidad" class="form-control"
-										path="nacionalidad">
+									<label for="puesto">Puesto</label>
+									<form:select id="puesto" class="form-control"
+										path="puesto">
 										<c:forEach items="${puestos}" var="p">
 											<option value="${p.puestoId}">${p.nombre}</option>
 										</c:forEach>
@@ -346,9 +344,9 @@
 
 
 								<div class="col-4">
-									<label for="nacionalidad">Departamento</label>
-									<form:select id="nacionalidad" class="form-control"
-										path="nacionalidad">
+									<label for="departamento">Departamento</label>
+									<form:select id="departamento" class="form-control"
+										path="departamento">
 										<c:forEach items="${departamentos}" var="d">
 											<option value="${d.deptoId}">${d.nombre}</option>
 										</c:forEach>
@@ -386,14 +384,14 @@
 									<label for="jornadaDiaria">Dias laborales</label>
 									<form:input type="number" class="form-control"
 										id="jornadaDiaria" name="points" step="1" min="0" max="7"
-										path="edad" text="dias" value="5"></form:input>
+										path="jornada_semanal" text="dias" value="5"></form:input>
 								</div>
 
 								<div class="col-4">
 									<label for="jornadaHoraria">Horas laborales</label>
 									<form:input type="number" class="form-control"
 										id="jornadaDiaria" name="points" step="1" min="0" max="12"
-										path="edad" text="horas" value="9"></form:input>
+										path="edad" text="jornada_diaria" value="9"></form:input>
 								</div>
 
 
@@ -415,9 +413,9 @@
 							<div class="form-row align-items-center">
 
 								<div class="col-2">
-									<label for="tipoJornada">Forma de pago</label>
-									<form:select id="tipoJornada" class="form-control"
-										path="tipo_jornada">
+									<label for="formaPago">Forma de pago</label>
+									<form:select id="formaPago" class="form-control"
+										path="forma_pago">
 										<option value="semanal">semanal</option>
 										<option value="quincenal">quincenal</option>
 										<option value="mensual">mensual</option>
@@ -427,9 +425,9 @@
 								</div>
 
 								<div class="col-3">
-									<label for="tipoJornada">Medio de pago</label>
-									<form:select id="tipoJornada" class="form-control"
-										path="tipo_jornada">
+									<label for="medioPago">Medio de pago</label>
+									<form:select id="medioPago" class="form-control"
+										path="medio_pago">
 										<option value="transferencia bancaria">tranferencia
 											bancaria</option>
 										<option value="efectivo">efectivo</option>
@@ -440,9 +438,9 @@
 								</div>
 
 								<div class="col-2">
-									<label for="tipoJornada">Moneda</label>
-									<form:select id="tipoJornada" class="form-control"
-										path="tipo_jornada">
+									<label for="moneda">Moneda</label>
+									<form:select id="moneda" class="form-control"
+										path="moenda">
 										<option value="semanal">colon</option>
 										<option value="quincenal">dolar</option>
 										<option value="mensual">euro</option>
@@ -451,9 +449,9 @@
 								</div>
 
 								<div class="col-2">
-									<label for="tipoJornada">Banco</label>
-									<form:select id="tipoJornada" class="form-control"
-										path="tipo_jornada">
+									<label for="banco">Banco</label>
+									<form:select id="banco" class="form-control"
+										path="banco">
 										<option value="semanal">bac credomatic</option>
 										<option value="quincenal">banco nacional</option>
 										<option value="mensual">banco bcr</option>
@@ -494,13 +492,13 @@
 								<div class="col-4">
 									<label for="pagoCelular">monto por uso celular</label>
 									<form:input id="pagoCelular" type="text" class="form-control"
-										path="pago_bonificacion" value="0" />
+										path="pago_celular" value="0" />
 								</div>
 
 								<div class="col-4">
 									<label for="pagoTransporte">monto por transporte</label>
 									<form:input id="pagoTransorte" type="text" class="form-control"
-										path="pago_bonificacion" value="0" />
+										path="pago_transporte" value="0" />
 								</div>
 
 
