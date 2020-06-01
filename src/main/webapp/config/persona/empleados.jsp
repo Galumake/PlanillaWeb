@@ -1,6 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
@@ -82,8 +83,8 @@
 							<div class="form-row align-items-center">
 								<div class="col-2">
 									<label for="nacimiento">Fecha Nacimiento</label>
-									<form:input type="Date" class="form-control" id="nacimiento"
-										path="nacimiento"></form:input>
+									<form:input type="date" class="form-control" id="nacimiento"
+										path="nacimiento" value="2020-01-01"></form:input>
 								</div>
 
 								<div class="col-2">
@@ -250,9 +251,12 @@
 							<div class="form-row align-items-center">
 
 								<div class="col-2">
+									 
+
+									<fmt:formatDate var="fmtDate" value="${localDateTime}" pattern="yyyy-MM-dd" />  
 									<label for="fechaContrato">Fecha de contrato</label>
 									<form:input type="Date" class="form-control" id="fechaContrato"
-										path="fechaContrato"></form:input>
+										path="fechaContrato" value = "${fmtDate}" ></form:input>
 								</div>
 
 								<div class="col-3">

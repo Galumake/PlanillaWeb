@@ -1,5 +1,10 @@
 package com.sedesoft.planillaweb.web;
 
+import java.sql.Date;
+import java.time.LocalDate;
+
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,11 +37,13 @@ public class PersonaCtrlr {
 
 	@GetMapping("/config/person/employee/show")
 	public String personaShow(Model model) {
+		Date date = java.sql.Date.valueOf(LocalDate.now());
 		model.addAttribute("entidad", (new Persona()));	
 		model.addAttribute("nacionalidades", nacSrv.findAll() );
 		model.addAttribute("sedes", sedeSrv.findAll() );
 		model.addAttribute("puestos", puestoSrv.findAll() );
 		model.addAttribute("departamentos", departamentoSrv.findAll() );
+		model.addAttribute("localDateTime",  date);
 		return  "/config/persona/empleados";
 	}
 
