@@ -40,8 +40,60 @@
 		</div>
 	</nav>
 
-	<br>
+	<div class="container-fluid m-4">
+		<form:form action="#" modelAttribute="$filtro">
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10">
+					<div class="card border-success  mb-3">
+						<h5 class="card-header ">Consulta</h5>
+						<div class="card-body text-dark">
+							<div class="form-row align-items-center">
+								<div class="col-6">
+									<input class="form-control"
+										placeholder="Consultar persona por cedula, nombre ó apellidos" />
+								</div>
+								<div class="col-2">
+									<input type="submit" class="form-control btn-primary"
+										value="consultar" />
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-12">
+									<table class="table table-striped table-hover table-sm">
+										<thead class="thead-ligth">
+											<tr>
+												<th scope="col">CEDULA</th>
+												<th scope="col">NOMBRE</th>
+												<th scope="col">APELLIDO</th>
+												<th scope="col">APELLIDO 2</th>
+												<th scope="col">SELECCIONA</th>
+												<th scope="col">ELIMINA</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td >10</td>
+												<td >alfonso</td>
+												<td >uma</td>
+												<td >quesa 2</td>
+												<td ><a class="button bg-success btn-sm text-light">seleccionar</a></td>
+												<td ><a class="button bg-danger  btn-sm text-light">eliminar</a></td>
+											</tr>
+										</tbody>
+									</table>
 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
+		</form:form>
+
+	</div>
 
 	<!-- FORMULARIO -->
 	<div class="container-fluid m-4">
@@ -619,7 +671,7 @@
 	<!-- datepicker -->
 	<script
 		src="${contextPath}/resources/js/bootsrap-datepicker/bootstrap-datepicker.min.js"></script>
-		
+
 	<script>
 		$('.defaultDate').datepicker({
 			format : "dd/mm/yyyy",

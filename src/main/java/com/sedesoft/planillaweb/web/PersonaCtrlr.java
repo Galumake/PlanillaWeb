@@ -44,6 +44,8 @@ public class PersonaCtrlr {
 		model.addAttribute("puestos", puestoSrv.findAll() );
 		model.addAttribute("departamentos", departamentoSrv.findAll() );
 		model.addAttribute("localDateTime",  date);
+		String filtro = null;
+		model.addAttribute("filtro",filtro );
 		return  "/config/persona/empleados";
 	}
 
