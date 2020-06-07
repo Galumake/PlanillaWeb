@@ -1,7 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
@@ -18,6 +18,10 @@
 <link href="${contextPath}/resources/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+<!-- datepicker -->
+<link
+	href="${contextPath}/resources/css/bootstrap-datepicker/bootstrap-datepicker.min.css"
+	rel="stylesheet">
 </head>
 
 <body>
@@ -83,8 +87,8 @@
 							<div class="form-row align-items-center">
 								<div class="col-2">
 									<label for="nacimiento">Fecha Nacimiento</label>
-									<form:input type="date" class="form-control" id="nacimiento"
-										path="nacimiento" value="2020-01-01"></form:input>
+									<form:input id="nacimiento" type="text"
+										class="form-control date defaultDate" path="nacimiento"></form:input>
 								</div>
 
 								<div class="col-2">
@@ -173,8 +177,9 @@
 
 								<div class="col-2">
 									<label for="telefonoHabitacion">teléfono</label>
-									<form:input type="text" class="form-control" id="telefonoHabitacion"
-										path="telHabitacion" placeholder="teléfono habitación"></form:input>
+									<form:input type="text" class="form-control"
+										id="telefonoHabitacion" path="telHabitacion"
+										placeholder="teléfono habitación"></form:input>
 								</div>
 
 								<div class="col-3">
@@ -251,12 +256,12 @@
 							<div class="form-row align-items-center">
 
 								<div class="col-2">
-									 
 
-									<fmt:formatDate var="fmtDate" value="${localDateTime}" pattern="yyyy-MM-dd" />  
 									<label for="fechaContrato">Fecha de contrato</label>
-									<form:input type="Date" class="form-control" id="fechaContrato"
-										path="fechaContrato" value = "${fmtDate}" ></form:input>
+									<form:input id="fechaContrato" type="text"
+										class="form-control date todayDate" path="fechaContrato"></form:input>
+
+
 								</div>
 
 								<div class="col-3">
@@ -289,8 +294,8 @@
 
 								<div class="col-2">
 									<label for="finPlazo">Fin de contrato</label>
-									<form:input type="Date" class="form-control" id="finPlazo"
-										path="fin_de_plazo"></form:input>
+									<form:input id="finPlazo" type="text"
+										class="form-control date todayDate" path="fin_de_plazo"></form:input>
 								</div>
 
 								<div class="col-2">
@@ -327,8 +332,7 @@
 
 								<div class="col-4">
 									<label for="sede">Sede</label>
-									<form:select id="sede" class="form-control"
-										path="sede">
+									<form:select id="sede" class="form-control" path="sede">
 										<c:forEach items="${sedes}" var="s">
 											<option value="${s.sedeId}">${s.nombre}</option>
 										</c:forEach>
@@ -338,8 +342,7 @@
 
 								<div class="col-4">
 									<label for="puesto">Puesto</label>
-									<form:select id="puesto" class="form-control"
-										path="puesto">
+									<form:select id="puesto" class="form-control" path="puesto">
 										<c:forEach items="${puestos}" var="p">
 											<option value="${p.puestoId}">${p.nombre}</option>
 										</c:forEach>
@@ -349,8 +352,7 @@
 
 								<div class="col-4">
 									<label for="departamento">Departamento</label>
-									<form:select id="departamento" class="form-control"
-										path="dpto">
+									<form:select id="departamento" class="form-control" path="dpto">
 										<c:forEach items="${departamentos}" var="d">
 											<option value="${d.deptoId}">${d.nombre}</option>
 										</c:forEach>
@@ -443,8 +445,7 @@
 
 								<div class="col-2">
 									<label for="moneda">Moneda</label>
-									<form:select id="moneda" class="form-control"
-										path="moneda">
+									<form:select id="moneda" class="form-control" path="moneda">
 										<option value="semanal">colon</option>
 										<option value="quincenal">dolar</option>
 										<option value="mensual">euro</option>
@@ -454,8 +455,7 @@
 
 								<div class="col-2">
 									<label for="banco">Banco</label>
-									<form:select id="banco" class="form-control"
-										path="banco">
+									<form:select id="banco" class="form-control" path="banco">
 										<option value="semanal">bac credomatic</option>
 										<option value="quincenal">banco nacional</option>
 										<option value="mensual">banco bcr</option>
@@ -526,22 +526,22 @@
 								<div class="col-3">
 									<label for="costoHora">Costo hora</label>
 									<form:input type="number" class="form-control" id="costoHora"
-										name="costoHora" step="1" min="0" max="200000" path="costo_hora"
-										></form:input>
+										name="costoHora" step="1" min="0" max="200000"
+										path="costo_hora"></form:input>
 								</div>
 
 								<div class="col-3">
 									<label for="costoDoble">Costo doble</label>
 									<form:input type="number" class="form-control" id="costoDoble"
-										name="costoDoble" step="1" min="0" max="200000" path="costo_doble"
-									></form:input>
+										name="costoDoble" step="1" min="0" max="200000"
+										path="costo_doble"></form:input>
 								</div>
 
 								<div class="col-3">
 									<label for="costoExtra">Costo extra</label>
 									<form:input type="number" class="form-control" id="costoExtra"
-										name="costoExtra" step="1" min="0" max="200000" path="costo_extra"
-										></form:input>
+										name="costoExtra" step="1" min="0" max="200000"
+										path="costo_extra"></form:input>
 								</div>
 
 								<div class="col-3">
@@ -616,6 +616,26 @@
 	<script src="${contextPath}/resources/js/jquery-3.4.1.slim.min.js"></script>
 	<script src="${contextPath}/resources/js/popper.min.js"></script>
 	<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+	<!-- datepicker -->
+	<script
+		src="${contextPath}/resources/js/bootsrap-datepicker/bootstrap-datepicker.min.js"></script>
+		
+	<script>
+		$('.defaultDate').datepicker({
+			format : "dd/mm/yyyy",
+			autoclose : true,
+			defaultViewDate : {
+				year : 1999,
+				month : 12,
+				day : 01
+			}
+		});
+		$('.todayDate').datepicker({
+			format : "dd/mm/yyyy",
+			autoclose : true,
+		});
+	</script>
+
 
 </body>
 </html>
