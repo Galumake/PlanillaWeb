@@ -55,7 +55,7 @@
 								</div>
 								<div class="col-2">
 									<input type="submit" class="form-control btn-primary"
-										value="consultar" />
+										value="consultar" style="border-radius: 16px;" />
 								</div>
 							</div>
 							<br>
@@ -74,12 +74,12 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td >10</td>
-												<td >alfonso</td>
-												<td >uma</td>
-												<td >quesa 2</td>
-												<td ><a class="button bg-success btn-sm text-light">seleccionar</a></td>
-												<td ><a class="button bg-danger  btn-sm text-light">eliminar</a></td>
+												<td>10</td>
+												<td>alfonso</td>
+												<td>uma</td>
+												<td>quesa 2</td>
+												<td><a class="button bg-success btn-sm text-light">seleccionar</a></td>
+												<td><a class="button bg-danger  btn-sm text-light">eliminar</a></td>
 											</tr>
 										</tbody>
 									</table>
@@ -352,7 +352,8 @@
 
 								<div class="col-2">
 									<label>Contratar nuevamente</label> <input type="button"
-										class="button btn-primary form-control" value="recontratar">
+										class="button btn-primary form-control" value="recontratar"
+										style="border-radius: 16px;">
 								</div>
 
 
@@ -602,6 +603,11 @@
 										name="points" step="1" min="0" max="3000000"
 										path="costo_total"></form:input>
 								</div>
+								<div class="col-3 mt-2">
+									<input type="button"
+										class="button btn-success form-control btn-sm border-radius"
+										value="Calcular" style="border-radius: 16px;">
+								</div>
 							</div>
 						</div>
 
@@ -616,6 +622,7 @@
 				<div class="col-10">
 					<div class="card border-success  mb-3">
 						<h5 class="card-header ">Salario</h5>
+
 						<div class="card-body text-dark">
 							<div class="form-row align-items-center">
 
@@ -651,13 +658,32 @@
 								</div>
 								<form:input type="hidden" path="fecha"></form:input>
 								<form:input type="hidden" path="user"></form:input>
+								<div class="col-3 mt-2">
+									<button type="button"
+										class="btn btn-success form-control btn-sm"
+										style="border-radius: 16px;">Calcular</button>
+								</div>
 
 							</div>
+
 						</div>
+
 
 					</div>
 				</div>
 				<div class="col-1"></div>
+			</div>
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-8">
+					<div class="col-3 d-flex p-1 flex-row-reverse">
+						<input type="submit"
+							class="button btn-primary form-control btn-sm"
+							value="Guardar cambios" style="border-radius: 16px;">
+					</div>
+				</div>
+				<div class="col-1"></div>
+
 			</div>
 
 		</form:form>
@@ -671,21 +697,11 @@
 	<!-- datepicker -->
 	<script
 		src="${contextPath}/resources/js/bootsrap-datepicker/bootstrap-datepicker.min.js"></script>
+	<script>
+		<script src="${contextPath}/resources/js/bootsrap-datepicker/conf/configfile.js"> </script>
 
 	<script>
-		$('.defaultDate').datepicker({
-			format : "dd/mm/yyyy",
-			autoclose : true,
-			defaultViewDate : {
-				year : 1999,
-				month : 12,
-				day : 01
-			}
-		});
-		$('.todayDate').datepicker({
-			format : "dd/mm/yyyy",
-			autoclose : true,
-		});
+		
 	</script>
 
 
