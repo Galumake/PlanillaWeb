@@ -18,12 +18,14 @@
 <link href="${contextPath}/resources/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+
 <!-- datepicker -->
 <link
 	href="${contextPath}/resources/css/bootstrap-datepicker/bootstrap-datepicker.min.css"
 	rel="stylesheet">
 </head>
-
+<!-- FONT OWESOME -->
+<script src="${contextPath}/resources/css/all.css"></script>
 <body>
 
 	<!-- NAVBAR -->
@@ -31,10 +33,11 @@
 
 		<div class="row">
 			<div class="col-6 display-4 text-white">Registro Empleados</div>
-			<div class="col-5 d-flex p-3 flex-row-reverse">
+			<div class="col-5 d-flex p-3 flex-row-reverse ">
 				<a><img
 					src="${contextPath}/resources/img/button/home_white_18dp.png"
-					title="Ir a Menu" onclick="location.href='/'"></a>
+					title="Ir a Menu" onclick="location.href='/'"></a><i
+					class="far fa-save"></i>
 			</div>
 			<div class="col-1"></div>
 		</div>
@@ -421,47 +424,7 @@
 				<div class="col-1"></div>
 			</div>
 
-			<div class="row">
-				<div class="col-1"></div>
-				<div class="col-10">
-					<div class="card border-success  mb-3">
-						<h5 class="card-header ">Jornada</h5>
-						<div class="card-body text-dark">
-							<div class="form-row align-items-center">
 
-								<div class="col-4">
-									<label for="tipoJornada">Tipo de Jornada</label>
-									<form:select id="tipoJornada" class="form-control"
-										path="tipo_jornada">
-										<option value="diurna">diurna</option>
-										<option value="nocturna">nocturna</option>
-										<option value="mixta">mixta</option>
-									</form:select>
-								</div>
-
-								<div class="col-4">
-									<label for="jornadaDiaria">Dias laborales</label>
-									<form:input type="number" class="form-control"
-										id="jornadaDiaria" name="points" step="1" min="0" max="7"
-										path="jornada_semanal" text="dias" value="5"></form:input>
-								</div>
-
-								<div class="col-4">
-									<label for="jornadaHoraria">Horas laborales</label>
-									<form:input type="number" class="form-control"
-										id="jornadaDiaria" name="points" step="1" min="0" max="12"
-										path="edad" text="jornada_diaria" value="9"></form:input>
-								</div>
-
-
-
-							</div>
-						</div>
-
-					</div>
-				</div>
-				<div class="col-1"></div>
-			</div>
 
 			<div class="row">
 				<div class="col-1"></div>
@@ -536,6 +499,98 @@
 				<div class="col-1"></div>
 				<div class="col-10">
 					<div class="card border-success  mb-3">
+						<h5 class="card-header ">Jornada</h5>
+						<div class="card-body text-dark">
+							<div class="form-row align-items-center">
+
+								<div class="col-4">
+									<label for="tipoJornada">Tipo de Jornada</label>
+									<form:select id="tipoJornada" class="form-control"
+										path="tipo_jornada">
+										<option value="diurna">diurna</option>
+										<option value="nocturna">nocturna</option>
+										<option value="mixta">mixta</option>
+									</form:select>
+								</div>
+
+								<div class="col-4">
+									<label for="horaLaboral">Horas laborales</label>
+									<form:input type="number" class="form-control" id="horaLaboral"
+										name="points" step="1" min="0" max="12" path="edad"
+										text="jornada_diaria" value="9"></form:input>
+								</div>
+
+								<div class="col-4">
+									<label for="diaLaboral">Dias laborales</label>
+									<form:input type="number" class="form-control" id="diaLaboral"
+										name="points" step="1" min="0" max="7" path="jornada_semanal"
+										text="dias" value="5"></form:input>
+								</div>
+
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10">
+					<div class="card border-success  mb-3">
+						<h5 class="card-header ">Costos</h5>
+						<div class="card-body text-dark">
+							<div class="form-row align-items-center">
+
+								<div class="col-3">
+									<label for="costoHora">Costo hora</label>
+									<form:input type="number" class="form-control" id="costoHora"
+										name="costoHora" step="1" min="0" max="200000"
+										path="costo_hora"></form:input>
+								</div>
+
+								<div class="col-3">
+									<label for="costoExtra">Costo extra</label>
+									<form:input type="text" class="form-control" id="costoExtra"
+										name="costoExtra" step="1" min="0" max="200000"
+										path="costo_extra" readonly="true"></form:input>
+								</div>
+
+								<div class="col-3">
+									<label for="costoDoble">Costo doble</label>
+									<form:input type="text" class="form-control" id="costoDoble"
+										name="costoDoble" step="1" min="0" max="200000"
+										path="costo_doble" readonly="true"></form:input>
+								</div>
+
+
+
+								<div class="col-3">
+									<label for="costoJornada">Costo por Jornada</label>
+									<form:input type="text" class="form-control" id="costoJornada"
+										name="points" step="1" min="0" max="3000000"
+										path="costo_total" readonly="true"></form:input>
+								</div>
+								<div class="col-2 mt-2">
+									<input type="button"
+										class="button btn-success form-control btn-sm border-radius"
+										value="Calcular" style="border-radius: 16px;"
+										onclick="calculoCostos();">
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-1"></div>
+			</div>
+
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10">
+					<div class="card border-success  mb-3">
 						<h5 class="card-header ">Complementos</h5>
 						<div class="card-body text-dark">
 							<div class="form-row align-items-center">
@@ -572,56 +627,7 @@
 				<div class="col-1"></div>
 				<div class="col-10">
 					<div class="card border-success  mb-3">
-						<h5 class="card-header ">Costos</h5>
-						<div class="card-body text-dark">
-							<div class="form-row align-items-center">
-
-								<div class="col-3">
-									<label for="costoHora">Costo hora</label>
-									<form:input type="number" class="form-control" id="costoHora"
-										name="costoHora" step="1" min="0" max="200000"
-										path="costo_hora"></form:input>
-								</div>
-
-								<div class="col-3">
-									<label for="costoDoble">Costo doble</label>
-									<form:input type="number" class="form-control" id="costoDoble"
-										name="costoDoble" step="1" min="0" max="200000"
-										path="costo_doble"></form:input>
-								</div>
-
-								<div class="col-3">
-									<label for="costoExtra">Costo extra</label>
-									<form:input type="number" class="form-control" id="costoExtra"
-										name="costoExtra" step="1" min="0" max="200000"
-										path="costo_extra"></form:input>
-								</div>
-
-								<div class="col-3">
-									<label for="costoTotal">Total</label>
-									<form:input type="number" class="form-control" id="costoTotal"
-										name="points" step="1" min="0" max="3000000"
-										path="costo_total"></form:input>
-								</div>
-								<div class="col-3 mt-2">
-									<input type="button"
-										class="button btn-success form-control btn-sm border-radius"
-										value="Calcular" style="border-radius: 16px;">
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-				<div class="col-1"></div>
-			</div>
-
-
-			<div class="row">
-				<div class="col-1"></div>
-				<div class="col-10">
-					<div class="card border-success  mb-3">
-						<h5 class="card-header ">Salario</h5>
+						<h5 class="card-header ">Salario Mensual</h5>
 
 						<div class="card-body text-dark">
 							<div class="form-row align-items-center">
@@ -629,7 +635,8 @@
 								<div class="col-3">
 									<label for="tipoAporte">Tipo de Aporte</label>
 									<form:select id="tipoAporte" class="form-control"
-										path="tipo_aporte">
+										path="tipo_aporte" onchange="tipoAporteSelected();">
+										<option value="#">seleccione tipo</option>
 										<option value="porcentual">porcentual</option>
 										<option value="fijo">monto fijo</option>
 										<option value="exento">excento del aporte</option>
@@ -640,28 +647,28 @@
 									<label for="montoAporte">Monto de aporte</label>
 									<form:input type="number" class="form-control" id="montoAporte"
 										name="montoAporte" step="1" min="0" max="3000000"
-										path="monto_aporte"></form:input>
+										path="monto_aporte" readonly="true" value="0"></form:input>
 								</div>
 
 								<div class="col-3">
 									<label for="salarioNeto">Salario Neto</label>
-									<form:input type="number" class="form-control" id="salarioNeto"
+									<form:input type="text" class="form-control" id="salarioNeto"
 										name="salarioNeto" step="1" min="0" max="3000000"
-										path="salario_neto"></form:input>
+										path="salario_neto" readonly="true"></form:input>
 								</div>
 
 								<div class="col-3">
 									<label for="salarioBruto">Salario Bruto</label>
-									<form:input type="number" class="form-control"
-										id="salarioBruto" name="salarioBruto" step="1" min="0"
-										max="3000000" path="salario_bruto"></form:input>
+									<form:input type="text" class="form-control" id="salarioBruto"
+										name="salarioBruto" step="1" min="0" max="3000000"
+										path="salario_bruto" readonly="true"></form:input>
 								</div>
 								<form:input type="hidden" path="fecha"></form:input>
 								<form:input type="hidden" path="user"></form:input>
-								<div class="col-3 mt-2">
+								<div class="col-2 mt-2">
 									<button type="button"
 										class="btn btn-success form-control btn-sm"
-										style="border-radius: 16px;">Calcular</button>
+										style="border-radius: 16px;" onclick="calculoAporte();">Calcular</button>
 								</div>
 
 							</div>
@@ -676,10 +683,9 @@
 			<div class="row">
 				<div class="col-1"></div>
 				<div class="col-8">
-					<div class="col-3 d-flex p-1 flex-row-reverse">
-						<input type="submit"
-							class="button btn-primary form-control btn-sm"
-							value="Guardar cambios" style="border-radius: 16px;">
+					<div class="col-2 d-flex p-1 flex-row-reverse">
+						<input type="submit" class="button btn-primary form-control  "
+							value="Guardar" style="border-radius: 32px;">
 					</div>
 				</div>
 				<div class="col-1"></div>
@@ -695,15 +701,11 @@
 	<script src="${contextPath}/resources/js/popper.min.js"></script>
 	<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 	<!-- datepicker -->
-	<script
-		src="${contextPath}/resources/js/bootsrap-datepicker/bootstrap-datepicker.min.js"></script>
-	<script>
-		<script src="${contextPath}/resources/js/bootsrap-datepicker/conf/configfile.js"> </script>
-
-	<script>
-		
-	</script>
-
+	<script src="${contextPath}/resources/dp/bootstrap-datepicker.min.js"></script>
+	<script src="${contextPath}/resources/dp/configfile.js"></script>
+	<!-- app files -->
+	<script src="${contextPath}/resources/util/truncate.js"></script>
+	<script src="${contextPath}/resources/app/persona.js"></script>
 
 </body>
 </html>
