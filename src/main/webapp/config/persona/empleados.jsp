@@ -326,8 +326,6 @@
 										<option value="plazo idefinido">plazo idefinido</option>
 										<option value="plazo fijo">plazo fijo</option>
 										<option value="eventual">eventual</option>
-										<option value="pasantia sin paga">pasantia sin paga</option>
-										<option value="pasantia pagada">pasantia pagada</option>
 									</form:select>
 								</div>
 
@@ -442,7 +440,6 @@
 										<option value="quincenal">quincenal</option>
 										<option value="mensual">mensual</option>
 										<option value="mensual">diario</option>
-										<option value="mensual">otra forma de pago</option>
 									</form:select>
 								</div>
 
@@ -574,8 +571,8 @@
 										path="costo_total" readonly="true"></form:input>
 								</div>
 								<div class="col-2 mt-2">
-									<input type="button"
-										class="button btn-success form-control btn-sm border-radius"
+									<input type="button" id="btnCalcula1"
+										class="button btn-success form-control btn-sm "
 										value="Calcular" style="border-radius: 16px;"
 										onclick="calculoCostos();">
 								</div>
@@ -651,25 +648,29 @@
 								</div>
 
 								<div class="col-3">
-									<label for="salarioNeto">Salario Neto</label>
-									<form:input type="text" class="form-control" id="salarioNeto"
-										name="salarioNeto" step="1" min="0" max="3000000"
-										path="salario_neto" readonly="true"></form:input>
-								</div>
-
-								<div class="col-3">
 									<label for="salarioBruto">Salario Bruto</label>
 									<form:input type="text" class="form-control" id="salarioBruto"
 										name="salarioBruto" step="1" min="0" max="3000000"
 										path="salario_bruto" readonly="true"></form:input>
 								</div>
+
+								<div class="col-3">
+									<label for="salarioNeto">Salario Neto</label>
+									<form:input type="text" class="form-control" id="salarioNeto"
+										name="salarioNeto" step="1" min="0" max="3000000"
+										path="salario_neto" readonly="true"></form:input>
+								</div>
+								
+								<div class="col-2 mt-2">
+									<input type="button" id="btnCalcula2"
+										class="button btn-success form-control btn-sm "
+										value="Calcular" style="border-radius: 16px;"
+										onclick="salarioBruto();">
+								</div>
+
 								<form:input type="hidden" path="fecha"></form:input>
 								<form:input type="hidden" path="user"></form:input>
-								<div class="col-2 mt-2">
-									<button type="button"
-										class="btn btn-success form-control btn-sm"
-										style="border-radius: 16px;" onclick="calculoAporte();">Calcular</button>
-								</div>
+
 
 							</div>
 

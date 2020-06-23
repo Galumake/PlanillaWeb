@@ -60,3 +60,26 @@ function tipoAporteSelected() {
 		break;
 	}
 }
+
+// SALARIO BRUTO: EL PAGO CON LAS RETENCIONES SUMADAS
+
+function salarioBruto(){
+	alert("alerta dos");
+	//var bonificacion = document.getElementById("bonificaciones").value;
+	
+	/*var celular = document.getElementById("pagoCelular").value;
+	var transporte = document.getElementById("pagoTransporte").value;
+	var retenciones= document.getElementById("montoAporte").value;
+	var costoJornada = parseFloat((document.getElementById("costoJornada").value)*21); 
+	var salarioBruto = parseFloat(bonificacion+celular+transporte+retenciones+costoJornada);
+	parseFloat((document.getElementById("salarioBruto").value  =salarioBruto;
+	return salarioBruto;*/
+}
+
+//SALARIO NETO: EL PAGO CON LAS RETENCIONES RESTADAS
+
+function salarioNeto(){
+	/*var retenciones= document.getElementById("montoAporte").value;
+	var salarioBruto = salarioBruto();
+	document.getElementById("salarioNeto").value = truncate(parseFloat(salarioBruto-retenciones),2);*/
+}
