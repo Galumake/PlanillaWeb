@@ -594,19 +594,19 @@
 
 								<div class="col-4">
 									<label for="bonificaciones">monto por bonificacion</label>
-									<form:input id="bonificaciones" type="text"
+									<form:input id="bonificaciones" type="number" min="0"
 										class="form-control" path="pago_bonificacion" value="0" />
 								</div>
 
 								<div class="col-4">
 									<label for="pagoCelular">monto por uso celular</label>
-									<form:input id="pagoCelular" type="text" class="form-control"
+									<form:input id="pagoCelular" type="number" min="0" class="form-control"
 										path="pago_celular" value="0" />
 								</div>
 
 								<div class="col-4">
 									<label for="pagoTransporte">monto por transporte</label>
-									<form:input id="pagoTransorte" type="text" class="form-control"
+									<form:input id="pagoTransporte" type="number" min="0" class="form-control"
 										path="pago_transporte" value="0" />
 								</div>
 
@@ -665,7 +665,7 @@
 									<input type="button" id="btnCalcula2"
 										class="button btn-success form-control btn-sm "
 										value="Calcular" style="border-radius: 16px;"
-										onclick="salarioBruto();">
+										onclick="salNeto();">
 								</div>
 
 								<form:input type="hidden" path="fecha"></form:input>

@@ -1,3 +1,6 @@
+
+
+
 // Saca los calculos de la seccion costos
 function calculoCostos() {
 	var extra = document.getElementById("costoHora").value;
@@ -36,6 +39,7 @@ function calculoAportePorcentual() {
 function tipoAporteSelected() {
 	var seleccion = document.getElementById("tipoAporte").value
 	var costoExtra = document.getElementById("costoExtra").value;
+	
 	switch (seleccion) {
 	case "porcentual":
 		if (costoExtra != "") {
@@ -61,25 +65,25 @@ function tipoAporteSelected() {
 	}
 }
 
-// SALARIO BRUTO: EL PAGO CON LAS RETENCIONES SUMADAS
-
-function salarioBruto(){
-	alert("alerta dos");
-	//var bonificacion = document.getElementById("bonificaciones").value;
+function salBruto() {	
 	
-	/*var celular = document.getElementById("pagoCelular").value;
-	var transporte = document.getElementById("pagoTransporte").value;
-	var retenciones= document.getElementById("montoAporte").value;
-	var costoJornada = parseFloat((document.getElementById("costoJornada").value)*21); 
-	var salarioBruto = parseFloat(bonificacion+celular+transporte+retenciones+costoJornada);
-	parseFloat((document.getElementById("salarioBruto").value  =salarioBruto;
-	return salarioBruto;*/
+	var bon = parseFloat(document.getElementById("bonificaciones").value);
+	var cel = parseFloat(document.getElementById("pagoCelular").value);
+	var trans = parseFloat(document.getElementById("pagoTransporte").value);
+	var rete= parseFloat(document.getElementById("montoAporte").value);	
+	var costoJor = parseFloat(document.getElementById("costoJornada").value)*4; 
+	var totBruto = bon+cel+trans+rete+costoJor;
+	document.getElementById("salarioBruto").value=truncate(totBruto,2);
+	return truncate(totBruto,2);
 }
 
 //SALARIO NETO: EL PAGO CON LAS RETENCIONES RESTADAS
 
-function salarioNeto(){
-	/*var retenciones= document.getElementById("montoAporte").value;
-	var salarioBruto = salarioBruto();
-	document.getElementById("salarioNeto").value = truncate(parseFloat(salarioBruto-retenciones),2);*/
+function salNeto(){
+    
+	retenciones= document.getElementById("montoAporte").value;
+	var sb = salBruto();
+	//alert("salario bruto "+sb);
+	document.getElementById("salarioNeto").value = truncate(parseFloat(sb-retenciones),2);
 }
+
